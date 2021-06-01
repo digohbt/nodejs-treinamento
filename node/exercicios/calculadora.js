@@ -14,8 +14,8 @@ const calculadora = {
     },
     sub2(...params) {
         let i = 0
-        let resultado = 0
-        for(let i = 0 ; i < params.length ; i++) {
+        let resultado = params[i]
+        for(let i = 1 ; i < params.length ; i++) {
             resultado -= params[i]
         }
         return resultado
@@ -24,8 +24,8 @@ const calculadora = {
         return a / b 
     },
     div2(...params) {
-        let resultado = 1
-        for(let i = 0 ; i < params.length ; i++) {
+        let resultado = params[0]
+        for(let i = 1 ; i < params.length ; i++) {
             resultado /= params[i]
         }
         return resultado

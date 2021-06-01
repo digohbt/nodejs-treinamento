@@ -4,7 +4,7 @@ const calculadora = require ("./calculadora")
 // console.log(calculadora.somar2(2,1,1,1,1))
 
 // console.log(calculadora.sub(5, 2))
-// console.log(calculadora.sub2(5,1,1,1,))
+// console.log(calculadora.sub2(5,1,1,1))
 
 console.log(calculadora.div(5, 1))
 console.log(calculadora.div2(10,2,1,1))
