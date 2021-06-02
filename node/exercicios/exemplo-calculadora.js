@@ -21,3 +21,9 @@ console.log("======= multiplicação ==========")
 console.log(calculadora.mult(5, 2))
 console.log(calculadora.mult2(10,2,2,2))
 console.log("======= Fim ==========")
+
+let array1 = [0 ,2,5]
+let array2 = [0 ,2,5]
+
+let array3 = [...array1, ...array2]
+console.log(array3)
