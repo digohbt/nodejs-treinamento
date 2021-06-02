@@ -9,8 +9,8 @@ const server = http.createServer(
         if(request.url === "/"){
                 caminho_arquino = "index.html";
         }else {
-             caminho_arquino = `${request.url.replace("/","")}.html`
-            // console.log("===",segunda.replace("/",""))
+             caminho_arquino = `${request.url.substr(1)}.html`
+            //  console.log("===",caminho_arquino.substr(0))
         }
         // }else if (request.url === "/carrinho"){
         //         caminho_arquino = "carrinho.html";
@@ -19,7 +19,7 @@ const server = http.createServer(
         //         caminho_arquino = "produtos.html";
         // }
     
-       
+       console.log(caminho_arquino)
        if(fs.existsSync(caminho_arquino)){
             fs.readFile(caminho_arquino , 
                 (erro , dados)=> {
