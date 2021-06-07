@@ -1,8 +1,11 @@
 const mongoose = require('mongoose');
 
 module.exports = (app) => {
+    // cria RastreadorController para ser exportado para consign 
     const RastreadorController = {
+        //  função que sera criada para cadastrar ela sera visivel do lado de fora por causa do consign 
         cadastrar (request, response) {
+            // criar conecção com banco de dados usado moongose resposta da conecção sucesso the(), erro coneção cath()
             let conexao = mongoose.connect(
                     'mongodb://localhost:27017/rastro-dev', // string de conexão
                     {
@@ -13,11 +16,12 @@ module.exports = (app) => {
                 ).then((resposta => {
                     //  console.log(codigoRastreador,placaVeiculo, cpf)
                     const {codigoRastreador,placaVeiculo, cpfCliente  } = request.body
-
+                    //  buscar models/rastreadores   =>  o Schema do banco de dados  ... 
                     const Rastreador = app.models.rastreador;
-
-                    const rastreador =  new Rastreador({codigoRastreador,placaVeiculo, cpfCliente })
                     
+                    // pega rastreador atribiu o objeto com dados formatados Rastreador ( )
+                    const rastreador =  new Rastreador({codigoRastreador,placaVeiculo, cpfCliente })
+
                       Rastreador.create(rastreador)
                         .then((resultado ) => {
                             console.log("Rastriador criado casdastrado com sucesso")
