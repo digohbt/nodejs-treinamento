@@ -11,6 +11,16 @@ module.exports = (app)  => {
         "/rastreador", 
     //  chama função que esta criada no controle e add App usando consign
         app.controllers.rastreador.cadastrar
+    ) ;
+    app.put(
+        "/rastreador", 
+    //  chama função que esta criada no controle e add App usando consign
+        app.controllers.rastreador.alterar
+    ) 
+    app.delete(
+        "/rastreador/:codigoRastreador", 
+    //  chama função que esta criada no controle e add App usando consign
+        app.controllers.rastreador.excluir
     ) 
 }
  
